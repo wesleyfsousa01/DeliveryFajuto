@@ -55,7 +55,7 @@ public class FrmLogin extends javax.swing.JFrame {
         btnLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6578917_broom_clean_cleaning_housekeeping_icon.png"))); // NOI18N
         btnLimpar.setText("Limpar");
 
-        btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3005767_account_door_enter_login_icon.png"))); // NOI18N
+        btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/8679872_login_circle_line_icon.png"))); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
