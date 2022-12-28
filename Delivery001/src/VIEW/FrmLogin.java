@@ -187,7 +187,7 @@ public class FrmLogin extends javax.swing.JFrame {
         
          if(resp!=0)
       {
-          new FrmPrincipal().setVisible(true);
+          new FrmPrincipal(resp).setVisible(true);
             this.dispose();
       }
        else
