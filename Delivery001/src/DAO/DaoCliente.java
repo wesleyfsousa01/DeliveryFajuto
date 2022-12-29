@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author wesle
+ * @author wesley
  */
 public class DaoCliente {
     Connection conn;
     PreparedStatement pstm;
     
-        public void salvarCliente(Cliente c)
+    public void salvarCliente(Cliente c)
     {
     conn= new Conexao().conectarBanco();
     try
@@ -29,8 +29,6 @@ public class DaoCliente {
         pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,endereco,id_cidade) VALUES (?,?,?,?)");
         pstm.setString(1, c.nome);
         pstm.setString(2, c.cpf);
-        pstm.setString(3, c.endereco);
-        pstm.setInt(4, c.id_cidade);
         pstm.execute();
     }   
     catch(SQLException errins)

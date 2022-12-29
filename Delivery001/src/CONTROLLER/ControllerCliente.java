@@ -19,13 +19,13 @@ public class ControllerCliente {
 
     List<Cliente> lista = new ArrayList<Cliente>();
 
-    public void inserirUsuario(Cliente c) {
+    public void inserirCliente(Cliente c) {
         
-        if (!c.nome.isBlank() && !c.cpf.isBlank()&& !c.endereco.isBlank() && c.id_cidade!=0) {
+        if (!c.nome.isBlank() && !c.cpf.isBlank()) {
             cliente.salvarCliente(c);
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso!!!");
         } else {
-            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios");
+            JOptionPane.showMessageDialog(null, "Dados do cliente em branco!");
         }
 
     }

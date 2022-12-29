@@ -8,8 +8,12 @@ package MODEL;
  *
  * @author wesle
  */
-public class Cliente {
-    int id;
+public class Produto {
+    public int id;
+    public int cod_produto;
     public String nome;
-    public String cpf;
+    public String descricao;
+    public int qtd;
+    public String categoria;
+    
 }

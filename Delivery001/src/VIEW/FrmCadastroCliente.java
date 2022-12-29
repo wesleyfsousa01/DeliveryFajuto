@@ -4,6 +4,7 @@
  */
 package VIEW;
 import MODEL.Cliente;
+import DAO.DaoCliente;
 import VIEW.FrmPrincipal;
 import java.util.Locale;
 import CONTROLLER.ControllerUsuario;
@@ -398,9 +399,10 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        Cliente cliente = 
-        usu.nome = txtNomeCliente.getText();
-        usu.email =  txtCpfCliente.getText();
+        Cliente cliente = new Cliente();
+        cliente.nome = txtNomeCliente.getText();
+        cliente.cpf =  txtCpfCliente.getText();
+        cliente.endereco = txtEndereco.getText();
         
 
         controle.inserirUsuario(usu);

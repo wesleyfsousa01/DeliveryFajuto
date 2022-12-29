@@ -8,8 +8,13 @@ package MODEL;
  *
  * @author wesle
  */
-public class Cliente {
-    int id;
-    public String nome;
-    public String cpf;
+public class Endereco {
+    public int id;
+    public String cep;
+    public String bairro;
+    public String numero;
+    public String complemento;
+    public String uf;
+    public String cidade;
+    public int id_cliente;
 }
