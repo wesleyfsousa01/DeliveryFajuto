@@ -1,0 +1,63 @@
+-- create database deliveryfajuto;
+
+create table usuario (
+	id serial primary key,
+	email varchar (40),
+	senha varchar,
+	nome varchar (36),
+	tipo int not null
+);
+
+create table estado (
+	id serial primary key,
+	nome varchar (36),
+	uf char (2)
+);
+
+create table cidade (
+	id serial primary key,
+	nome varchar (36),
+	cep varchar (11),
+	id_estado int references estado(id)	
+);
+
+create table cliente (
+	id serial primary key,
+	nome varchar (36),
+	cpf varchar (14),
+	endereco varchar(60),
+	id_cidade int references cidade(id)
+);
+
+create table contato (
+	id serial primary key,
+	cel varchar (11),
+	email varchar (36),
+	id_cliente int references cliente (id)
+);
+
+create table fornecedor (
+	id serial primary key,
+	cnpj varchar (20),
+	nome varchar (40),
+	endereco varchar (40),
+	id_cidade int references cidade(id)
+);
+
+create table produto (
+	id serial primary key,
+	nome varchar (36),
+	descricao varchar (80),
+	preco numeric (5,2),
+	qtd int,
+	id_fornecedor int references fornecedor(id)
+);
+
+create table venda (
+	id serial primary key,
+	qtd int,
+	id_produto int references produto (id),
+	id_usuario int references usuario(id),
+	id_cliente int references cliente (id)
+);
+
