@@ -11,7 +11,8 @@ package MODEL;
 public class Endereco {
     public int id;
     public String cep;
-    public String bairro;
+    public String bairro;    
+    public String rua;    
     public String numero;
     public String complemento;
     public String uf;

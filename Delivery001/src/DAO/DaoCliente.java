@@ -25,7 +25,6 @@ public class DaoCliente {
     conn= new Conexao().conectarBanco();
     try
     {
-        
         pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,endereco,id_cidade) VALUES (?,?,?,?)");
         pstm.setString(1, c.nome);
         pstm.setString(2, c.cpf);
@@ -37,24 +36,5 @@ public class DaoCliente {
     }
     
     
-}
-        public int verificarIdCidade(String nome){
-            conn = new Conexao().conectarBanco();
-            int id = 0;
-            try {
-                pstm = conn.prepareStatement("select id from cidade where nome=?",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
-                pstm.setString(1, nome);
-                ResultSet rs = pstm.executeQuery();
-                if (rs.first()) {
-
-                    id = rs.getInt("id");
-
-                }
-                pstm.close();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null,"Erro ao buscar cidade no banco" + e);
-            }
-            return id;
-        }
-        
+}       
 }
