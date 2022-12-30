@@ -44,6 +44,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         menuCadastrar = new javax.swing.JMenu();
         menuCadastrarUsuario = new javax.swing.JMenuItem();
+        menuCadastroCliente = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -87,6 +88,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastrar.add(menuCadastrarUsuario);
+
+        menuCadastroCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        menuCadastroCliente.setText("Clientes");
+        menuCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroClienteActionPerformed(evt);
+            }
+        });
+        menuCadastrar.add(menuCadastroCliente);
         menuCadastrar.add(jSeparator1);
         menuCadastrar.add(jSeparator3);
         menuCadastrar.add(jSeparator2);
@@ -120,6 +130,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_menuCadastrarUsuarioActionPerformed
+
+    private void menuCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroClienteActionPerformed
+        FrmCadastroCliente cadcli = new FrmCadastroCliente();
+        painelDesktop.add(cadcli);
+        cadcli.setVisible(true);
+    }//GEN-LAST:event_menuCadastroClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +184,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuItem menuCadastrarUsuario;
+    private javax.swing.JMenuItem menuCadastroCliente;
     private javax.swing.JDesktopPane painelDesktop;
     // End of variables declaration//GEN-END:variables
 }
