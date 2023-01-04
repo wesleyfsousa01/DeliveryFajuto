@@ -25,7 +25,7 @@ public class DaoEndereco {
         conn = new Conexao().conectarBanco();
         
         try {
-            conn.prepareStatement("insert into table endereco(cep,bairro,rua,num,referencia,uf,cidade,id_cliente) values (?,?,?,?,?,?,?,?)");
+            pstm = conn.prepareStatement("insert into endereco(cep,bairro,rua,num,referencia,uf,cidade,id_cliente) values (?,?,?,?,?,?,?,?)");
             pstm.setString(1, e.cep);
             pstm.setString(2, e.bairro);
             pstm.setString(3, e.rua);
@@ -36,7 +36,7 @@ public class DaoEndereco {
             pstm.setInt(8, e.id_cliente);
             pstm.execute();
             
-            JOptionPane.showMessageDialog(null,"Endereço salvo com sucesso"+e);
+            JOptionPane.showMessageDialog(null,"Endereço salvo com sucesso");
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null,"Erro ao salvar dados na tabela endereco Dao.endereco"+ erro);
         }

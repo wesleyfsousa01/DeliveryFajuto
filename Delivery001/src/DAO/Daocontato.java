@@ -21,12 +21,14 @@ public class Daocontato {
         conn = new Conexao().conectarBanco();
         
         try {
-            pstm = conn.prepareStatement("INSERT INTO contato(tel, id_cliente)VALUES (?, ?)");
+            pstm = conn.prepareStatement("INSERT INTO contato(telefone,id_cliente)VALUES (?, ?)");
         
         pstm.setString(1, c.tel);
         pstm.setInt(2, c.id_cliente);
+        pstm.execute();
+        
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"Erro ao inserir na tabela endereço <DaoEndereco>" + e);
+            JOptionPane.showMessageDialog(null,"Erro ao inserir na tabela Contato <DaoEndereco>" + e);
         }
     }
    

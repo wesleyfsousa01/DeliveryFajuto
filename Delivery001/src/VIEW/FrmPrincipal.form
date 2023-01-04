@@ -52,7 +52,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuCadastroCliente">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Shift+C"/>
+                  <KeyStroke key="Shift+Ctrl+C"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clientes"/>
               </Properties>

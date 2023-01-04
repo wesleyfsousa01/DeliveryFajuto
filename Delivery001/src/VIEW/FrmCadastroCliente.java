@@ -28,6 +28,8 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
     List<Cliente> listaCliente = new ArrayList<Cliente>();
     List<Endereco> listaEndereco = new ArrayList<Endereco>();
     List<Contato> listaContato = new ArrayList<Contato>();
+    
+    DaoCliente daocli = new DaoCliente();
     int indice = 0;
 
     /**
@@ -36,12 +38,13 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
     public FrmCadastroCliente() {
         initComponents();
         setLocation(250, 50);
-        //ListaCliente = controle.recarregarLista();
+        listaCliente = controle.recarregarLista();
+        
         if (listaCliente.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Não existem usuários cadastrados");
         } else {
-            mostrarDadosTela();
-            preencherTabela();
+            //mostrarDadosTela();
+            //preencherTabela();
 
         }
     }
@@ -484,9 +487,10 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
         }
         //Clientes
         Cliente cliente = new Cliente();
+        Contato contato = new Contato(); 
         Endereco endereco = new Endereco();
-        Contato contato = new Contato();
-        //Contato
+       
+        //Cliente
         cliente.nome = txtNomeCliente.getText();
         cliente.cpf = txtCpfCliente.getText();
         cliente.email = txtEmailCliente.getText();
@@ -498,22 +502,24 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
         endereco.numero = txtNumero.getText();
         endereco.rua = txtRua.getText();
         endereco.uf = txtUf.getText();
-        endereco.id_cliente =  id_cliente;
-        //contato
-        contato.tel= txtTell.getText();
-        contato.id_cliente = id_cliente;
+        endereco.id_cliente = 7;
+        //Contato
+        contato.tel = txtTell.getText();
+        contato.id_cliente = 7;
+        
         controle.inserirCliente(cliente);
-        controle1.inserirEndereco(endereco);
         controle2.inserirContato(contato);
+        controle1.inserirEndereco(endereco);
+        
         //
-        controle.recarregarLista();
-        mostrarDadosTela();
+        //controle.recarregarLista();
+       // mostrarDadosTela();
 
         //cliente.endereco = txtEndereco.getText();
         //controle.inserirUsuario(usu);
         //listausu = controle.recarregarLista();
-        mostrarDadosTela();
-        preencherTabela();
+        //mostrarDadosTela();
+       // preencherTabela();
 
 
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -655,6 +661,11 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
         txtEmailCliente.setText(tblUsuario.getValueAt(linechoose, 2).toString());
         txtCpfCliente.setText(tblUsuario.getValueAt(linechoose, 3).toString());
 
+    }
+        public List<Cliente> recarregarLista() {
+        listaCliente.clear();
+        listaCliente = daocli.getClientes();
+        return listaCliente;
     }
 
 }
