@@ -9,7 +9,8 @@ package MODEL;
  * @author wesle
  */
 public class Cliente {
-    int id;
+    public int id;
     public String nome;
     public String cpf;
+    public String email;
 }

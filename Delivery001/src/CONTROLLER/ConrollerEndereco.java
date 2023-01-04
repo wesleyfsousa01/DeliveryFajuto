@@ -5,6 +5,7 @@
 package CONTROLLER;
 import CONEXAO.Conexao;
 import java.util.ArrayList;
+import java.util.List;
 import MODEL.Endereco;
 import DAO.DaoEndereco;
 import javax.swing.JOptionPane;
@@ -18,11 +19,17 @@ public class ConrollerEndereco {
     ArrayList<Endereco> edr = new ArrayList<Endereco>();
     
     public void inserirEndereco(Endereco e){
-        if(!e.cep.isBlank() && !e.numero.isBlank() && !e.complemento.isBlank()){
+        if(!e.cep.isBlank() && !e.numero.isBlank() && !e.referencia.isBlank()){
             endereco.salvarEndereco(e);
         }
         else{
             JOptionPane.showMessageDialog(null,"Erro ao transferir dadaos de endereço ControllerEndereco");
         }
+    }
+    
+    public List<Endereco> recarregarLista() {
+    edr.clear();
+    //edr = endereco.getUsuarios();
+    return edr;
     }
 }

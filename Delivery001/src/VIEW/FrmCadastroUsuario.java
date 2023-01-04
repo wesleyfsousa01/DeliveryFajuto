@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author wesle
+ * @author wesley Ferreira
  */
 public class FrmCadastroUsuario extends javax.swing.JInternalFrame {
     ControllerUsuario controle =  new ControllerUsuario();
@@ -434,7 +434,6 @@ public class FrmCadastroUsuario extends javax.swing.JInternalFrame {
 
 public void mostrarDadosTela(){
     txtIdUsuario.setText(""+listausu.get(indice).id);
-    txtEmailUsuario.setText(""+listausu.get(indice).id);
     txtNomeUsuario.setText(listausu.get(indice).nome);
     txtEmailUsuario.setText(listausu.get(indice).email);
     //txtSenhaUsuario.setText(listausu.get(indice).senha);

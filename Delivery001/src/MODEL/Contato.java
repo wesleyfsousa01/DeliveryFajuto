@@ -3,19 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MODEL;
+import MODEL.Cliente;
 
 /**
  *
- * @author wesley Ferreira
+ * @author Wesley Ferreira <Wesleyfsousa01@gmail.com>
  */
-public class Endereco {
+public class Contato {  
+    
     public int id;
-    public String cep;
-    public String bairro;    
-    public String rua;    
-    public String numero;
-    public String referencia;
-    public String uf;
-    public String cidade;
+    public String tel;
     public int id_cliente;
+    
 }

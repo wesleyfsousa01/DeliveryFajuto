@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package VIEW;
-import MODEL.Cliente;
+
+import MODEL.*;
 import DAO.DaoCliente;
 import VIEW.FrmPrincipal;
 import java.util.Locale;
-import CONTROLLER.ControllerUsuario;
+import CONTROLLER.*;
 import br.com.parg.viacep.ViaCEP;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +17,19 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author wesle
+ * @author wesley Ferreira
  */
 public class FrmCadastroCliente extends javax.swing.JInternalFrame {
-    ControllerUsuario controle =  new ControllerUsuario();
-     List<Cliente> ListaCliente = new ArrayList<Cliente>();
-     int indice=0;
+
+    CONTROLLER.ControllerCliente controle = new CONTROLLER.ControllerCliente();
+    CONTROLLER.ConrollerEndereco controle1 = new CONTROLLER.ConrollerEndereco();
+    CONTROLLER.ContollerContato controle2 = new CONTROLLER.ContollerContato();
+
+    List<Cliente> listaCliente = new ArrayList<Cliente>();
+    List<Endereco> listaEndereco = new ArrayList<Endereco>();
+    List<Contato> listaContato = new ArrayList<Contato>();
+    int indice = 0;
+
     /**
      * Creates new form FrmCadastroUsuario
      */
@@ -29,14 +37,12 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
         initComponents();
         setLocation(250, 50);
         //ListaCliente = controle.recarregarLista();
-        if(ListaCliente.isEmpty())
-        {
+        if (listaCliente.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Não existem usuários cadastrados");
-        }
-        else{
+        } else {
             mostrarDadosTela();
             preencherTabela();
-            
+
         }
     }
 
@@ -100,7 +106,7 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "Endereço"
+                "ID", "Nome", "CPF", "Email"
             }
         ) {
             Class[] types = new Class [] {
@@ -461,41 +467,70 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
         txtEmailCliente.setText("");
         txtComplemento.setText("");
         //cbxCidade.setSelectedIndex(0);
-       // cbxUf.setSelectedIndex(0);
-        
- 
+        // cbxUf.setSelectedIndex(0);
+
+
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        DaoCliente daocli = new DaoCliente();
+        List<Cliente> listacli = new ArrayList<Cliente>();
+        int id_cliente=0;
+        for(int i=0;i<listacli.size();i++){
+            id_cliente = listacli.get(i).id;
+        }      
+        if(id_cliente==0){
+            id_cliente =1;
+        }
+        //Clientes
         Cliente cliente = new Cliente();
+        Endereco endereco = new Endereco();
+        Contato contato = new Contato();
+        //Contato
         cliente.nome = txtNomeCliente.getText();
-        cliente.cpf =  txtCpfCliente.getText();
-        //cliente.endereco = txtEndereco.getText();
-        
+        cliente.cpf = txtCpfCliente.getText();
+        cliente.email = txtEmailCliente.getText();
+        // Endereco
+        endereco.cep = txtCep.getText();
+        endereco.bairro = txtBairro.getText();
+        endereco.cidade = txtCidade.getText();
+        endereco.referencia = txtComplemento.getText();
+        endereco.numero = txtNumero.getText();
+        endereco.rua = txtRua.getText();
+        endereco.uf = txtUf.getText();
+        endereco.id_cliente =  id_cliente;
+        //contato
+        contato.tel= txtTell.getText();
+        contato.id_cliente = id_cliente;
+        controle.inserirCliente(cliente);
+        controle1.inserirEndereco(endereco);
+        controle2.inserirContato(contato);
+        //
+        controle.recarregarLista();
+        mostrarDadosTela();
 
+        //cliente.endereco = txtEndereco.getText();
         //controle.inserirUsuario(usu);
         //listausu = controle.recarregarLista();
         mostrarDadosTela();
         preencherTabela();
-        
-        
-        
+
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
-        
+
         int id = Integer.parseInt(txtIdCliente.getText());
-        
-        controle.deletarUsuario(id);
+
+        //controle.deletarCliente(id);
         mostrarDadosTela();
         preencherTabela();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
 
-       mostrarDadosTela();
-       preencherTabela();
+        mostrarDadosTela();
+        preencherTabela();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void tblUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarioMouseClicked
@@ -503,8 +538,7 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblUsuarioMouseClicked
 
     private void tblUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblUsuarioKeyReleased
-        if(evt.getKeyCode()== 38 || evt.getKeyCode()==40)
-        {
+        if (evt.getKeyCode() == 38 || evt.getKeyCode() == 40) {
             preencherFormByTable();
         }
     }//GEN-LAST:event_tblUsuarioKeyReleased
@@ -519,7 +553,7 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
             txtRua.setText(viacep.getLogradouro());
             txtComplemento.setText(viacep.getComplemento());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar informações na Api FrmCAdastroCliente"+e);
+            JOptionPane.showMessageDialog(null, "Erro ao buscar informações na Api FrmCAdastroCliente" + e);
         }
     }//GEN-LAST:event_btnBuscarCepActionPerformed
 
@@ -576,35 +610,51 @@ public class FrmCadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtUf;
     // End of variables declaration//GEN-END:variables
 
-public void mostrarDadosTela(){
+    public void mostrarDadosTela() {
+        txtNomeCliente.setText("" + listaCliente.get(indice).id);
+        txtNomeCliente.setText(listaCliente.get(indice).nome);
+        txtNomeCliente.setText(listaCliente.get(indice).email);
+        txtNomeCliente.setText(listaCliente.get(indice).cpf);
 
+        txtTell.setText(listaContato.get(indice).tel);
 
-}
+        txtCep.setText(listaEndereco.get(indice).cep);
+        txtCep.setText(listaEndereco.get(indice).bairro);
+        txtCep.setText(listaEndereco.get(indice).cidade);
+        txtCep.setText(listaEndereco.get(indice).referencia);
+        txtCep.setText(listaEndereco.get(indice).rua);
+        txtCep.setText(listaEndereco.get(indice).uf);
 
-public void preencherTabela()
-{
-    tblUsuario.getColumnModel().getColumn(0);
-    tblUsuario.getColumnModel().getColumn(1);
-    tblUsuario.getColumnModel().getColumn(2);
-    tblUsuario.getColumnModel().getColumn(3);
-    
-    DefaultTableModel modelo = (DefaultTableModel)tblUsuario.getModel();
-    modelo.setNumRows(0);//Limpar Tabela
-    
+    }
 
-    
-       
-}
-public void preencherFormByTable()
-{
-    int linechoose = tblUsuario.getSelectedRow();
-    txtIdCliente.setText(tblUsuario.getValueAt(linechoose, 0).toString());
-    txtNomeCliente.setText(tblUsuario.getValueAt(linechoose, 2).toString());
-    txtCpfCliente.setText(tblUsuario.getValueAt(linechoose, 3).toString());
-    
-    
-    
-}
+    public void preencherTabela() {
+        tblUsuario.getColumnModel().getColumn(0);
+        tblUsuario.getColumnModel().getColumn(1);
+        tblUsuario.getColumnModel().getColumn(2);
+        tblUsuario.getColumnModel().getColumn(3);
+        //tblUsuario.getColumnModel().getColumn(3);
 
+        DefaultTableModel modelo = (DefaultTableModel) tblUsuario.getModel();
+        modelo.setNumRows(0);//Limpar Tabela
+
+        for (int i = 0; i < listaCliente.size(); i++) {
+            modelo.addRow(new Object[]{
+                listaCliente.get(i).id,
+                listaCliente.get(i).nome,
+                listaCliente.get(i).cpf,
+                listaCliente.get(i).email
+            });
+        }
+
+    }
+
+    public void preencherFormByTable() {
+        int linechoose = tblUsuario.getSelectedRow();
+        txtIdCliente.setText(tblUsuario.getValueAt(linechoose, 0).toString());
+        txtNomeCliente.setText(tblUsuario.getValueAt(linechoose, 1).toString());
+        txtEmailCliente.setText(tblUsuario.getValueAt(linechoose, 2).toString());
+        txtCpfCliente.setText(tblUsuario.getValueAt(linechoose, 3).toString());
+
+    }
 
 }

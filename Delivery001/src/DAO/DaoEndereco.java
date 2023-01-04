@@ -25,12 +25,12 @@ public class DaoEndereco {
         conn = new Conexao().conectarBanco();
         
         try {
-            conn.prepareStatement("insert into table endereco(cep,bairro,rua,numero,complemento,uf,cidade,id_cliente values (?,?,?,?,?,?,?,?)");
+            conn.prepareStatement("insert into table endereco(cep,bairro,rua,num,referencia,uf,cidade,id_cliente) values (?,?,?,?,?,?,?,?)");
             pstm.setString(1, e.cep);
             pstm.setString(2, e.bairro);
             pstm.setString(3, e.rua);
             pstm.setString(4, e.numero);
-            pstm.setString(5, e.complemento);
+            pstm.setString(5, e.referencia);
             pstm.setString(6, e.uf);
             pstm.setString(7, e.cidade);
             pstm.setInt(8, e.id_cliente);

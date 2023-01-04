@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,16 +27,43 @@ public class DaoCliente {
     conn= new Conexao().conectarBanco();
     try
     {
-        pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,endereco,id_cidade) VALUES (?,?,?,?)");
+        pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,email) VALUES (?,?,?)");
         pstm.setString(1, c.nome);
         pstm.setString(2, c.cpf);
+        pstm.setString(3, c.email);
         pstm.execute();
     }   
-    catch(SQLException errins)
+    catch(SQLException e)
     {
-        JOptionPane.showMessageDialog(null, "Erro ao inserir um usuário no BD "+errins);
+        JOptionPane.showMessageDialog(null, "Erro ao inserir na tabela cliente <DaoCliente> " + e);
     }
     
     
-}       
+} 
+     public List<Cliente> getClientes(){
+     List<Cliente> lista = new ArrayList<Cliente>();
+     conn = new Conexao().conectarBanco();
+     try{
+     pstm = conn.prepareStatement("SELECT * FROM cliente order by id",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+     ResultSet rs = pstm.executeQuery();
+     if(rs.first())
+     {
+         do{
+            Cliente cliente = new Cliente();
+            cliente.id = rs.getInt("id");
+            cliente.email = rs.getString("email");
+            cliente.nome = rs.getString(("nome"));
+            cliente.cpf = rs.getString("cpf");
+            
+            lista.add(cliente);
+
+         }while(rs.next());
+     }
+     pstm.close();
+     }catch(SQLException e)
+     {
+         JOptionPane.showMessageDialog(null, "Erro ao buscar dados da tabela Cliente: "+ e);
+     }
+     return lista;
+    }
 }

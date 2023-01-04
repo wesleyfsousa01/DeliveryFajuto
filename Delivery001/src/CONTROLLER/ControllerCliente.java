@@ -21,12 +21,19 @@ public class ControllerCliente {
 
     public void inserirCliente(Cliente c) {
         
-        if (!c.nome.isBlank() && !c.cpf.isBlank()) {
+        if (!c.nome.isBlank() && !c.cpf.isBlank() && !c.email.isBlank()) {
             cliente.salvarCliente(c);
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso!!!");
         } else {
-            JOptionPane.showMessageDialog(null, "Dados do cliente em branco!");
+            JOptionPane.showMessageDialog(null, "Dados do cliente em branco <ControllerCliente>!");
         }
 
     }
+    
+    public List<Cliente> recarregarLista() {
+    lista.clear();
+    lista = cliente.getClientes();
+    return lista;
+    }
+
 }
