@@ -21,7 +21,7 @@ public class ControllerCliente {
 
     public int inserirCliente(Cliente c) {
         int id =0;
-        if (!c.nome.isBlank() && !c.cpf.isBlank() && !c.email.isBlank()) {
+        if (!c.nome.isBlank() && !c.cpf.isBlank() && !c.email.isBlank() && !c.senha.isBlank()) {
             id = cliente.salvarCliente(c);
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso!!!");
         } else {

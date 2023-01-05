@@ -66,13 +66,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         );
         painelDesktopLayout.setVerticalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 635, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(254, 75));
 
+        jMenu4.setBackground(new java.awt.Color(48, 167, 86));
+        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jMenu4.setText("Cardápio");
+        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenuBar1.add(jMenu4);
 
         jMenu1.setText("Vendas");
@@ -132,7 +137,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCadastrarUsuarioActionPerformed
 
     private void menuCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroClienteActionPerformed
-        FrmCadastroCliente1 cadcli = new FrmCadastroCliente1();
+        FrmCadastroCliente cadcli = new FrmCadastroCliente();
         painelDesktop.add(cadcli);
         cadcli.setVisible(true);
     }//GEN-LAST:event_menuCadastroClienteActionPerformed

@@ -26,15 +26,16 @@ public class DaoCliente {
         int id = 0;
         conn = new Conexao().conectarBanco();
         try {
-            pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,email) VALUES (?,?,?) returning id");
+            pstm = conn.prepareStatement("INSERT INTO cliente(nome,cpf,email,senha) VALUES (?,?,?,?) returning id");
             pstm.setString(1, c.nome);
             pstm.setString(2, c.cpf);
             pstm.setString(3, c.email);
+            pstm.setString(4, c.senha);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
                 id = rs.getInt("id");
 
-                JOptionPane.showMessageDialog(null, "O do cliente " + c.nome + " é: " + id);
+                JOptionPane.showMessageDialog(null, "O ID do cliente " + c.nome + " é: " + id);
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao inserir na tabela cliente <DaoCliente> " + e);
