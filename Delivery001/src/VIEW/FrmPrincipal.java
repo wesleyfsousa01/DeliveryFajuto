@@ -72,10 +72,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jMenu4.setText("Vendas");
+        jMenu4.setText("Cardápio");
         jMenuBar1.add(jMenu4);
 
-        jMenu1.setText("Produtos");
+        jMenu1.setText("Vendas");
         jMenuBar1.add(jMenu1);
 
         menuCadastrar.setText("Cadastrar");
@@ -132,7 +132,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCadastrarUsuarioActionPerformed
 
     private void menuCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroClienteActionPerformed
-        FrmCadastroCliente cadcli = new FrmCadastroCliente();
+        FrmCadastroCliente1 cadcli = new FrmCadastroCliente1();
         painelDesktop.add(cadcli);
         cadcli.setVisible(true);
     }//GEN-LAST:event_menuCadastroClienteActionPerformed
@@ -185,6 +185,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuItem menuCadastrarUsuario;
     private javax.swing.JMenuItem menuCadastroCliente;
-    private javax.swing.JDesktopPane painelDesktop;
+    public static javax.swing.JDesktopPane painelDesktop;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,14 +19,15 @@ public class ControllerCliente {
 
     List<Cliente> lista = new ArrayList<Cliente>();
 
-    public void inserirCliente(Cliente c) {
-        
+    public int inserirCliente(Cliente c) {
+        int id =0;
         if (!c.nome.isBlank() && !c.cpf.isBlank() && !c.email.isBlank()) {
-            cliente.salvarCliente(c);
+            id = cliente.salvarCliente(c);
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso!!!");
         } else {
             JOptionPane.showMessageDialog(null, "Dados do cliente em branco <ControllerCliente>!");
         }
+        return id;
 
     }
     
