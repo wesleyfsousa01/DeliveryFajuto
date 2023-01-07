@@ -10,10 +10,11 @@ package MODEL;
  */
 public class Produto {
     public int id;
-    public int cod_produto;
     public String nome;
     public String descricao;
     public int qtd;
+    public double preco;
     public String categoria;
+    public String urlFoto;
     
 }

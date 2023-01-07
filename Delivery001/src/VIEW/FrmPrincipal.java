@@ -36,7 +36,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu2 = new javax.swing.JMenu();
         painelDesktop = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -44,13 +43,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         menuCadastrar = new javax.swing.JMenu();
         menuCadastrarUsuario = new javax.swing.JMenuItem();
-        menuCadastroCliente = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuCadastroCliente = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        menuCadastrarProdutos = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
-
-        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +91,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastrar.add(menuCadastrarUsuario);
+        menuCadastrar.add(jSeparator1);
 
         menuCadastroCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuCadastroCliente.setText("Clientes");
@@ -102,8 +101,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastrar.add(menuCadastroCliente);
-        menuCadastrar.add(jSeparator1);
         menuCadastrar.add(jSeparator3);
+
+        menuCadastrarProdutos.setText("Produtos");
+        menuCadastrarProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastrarProdutosActionPerformed(evt);
+            }
+        });
+        menuCadastrar.add(menuCadastrarProdutos);
         menuCadastrar.add(jSeparator2);
 
         jMenuBar1.add(menuCadastrar);
@@ -141,6 +147,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         painelDesktop.add(cadcli);
         cadcli.setVisible(true);
     }//GEN-LAST:event_menuCadastroClienteActionPerformed
+
+    private void menuCadastrarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarProdutosActionPerformed
+       FrmCadastroDeProdutos cadProd = new FrmCadastroDeProdutos();
+       painelDesktop.add(cadProd);
+       cadProd.setVisible(true);
+    }//GEN-LAST:event_menuCadastrarProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,7 +192,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
@@ -188,6 +199,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenu menuCadastrar;
+    private javax.swing.JMenuItem menuCadastrarProdutos;
     private javax.swing.JMenuItem menuCadastrarUsuario;
     private javax.swing.JMenuItem menuCadastroCliente;
     public static javax.swing.JDesktopPane painelDesktop;
