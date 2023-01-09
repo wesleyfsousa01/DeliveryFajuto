@@ -3,27 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/CONTROLLER/ControllerUsuario.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/DAO/DaoCliente.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmCadastroCliente.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/CONTROLLER/ControllerCliente.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/DAO/DaoUsuario.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmLogin.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmCadastroUsuario.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/DAO/DaoEndereco.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/CONTROLLER/ContollerContato.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmCadastroCliente1.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/CONTROLLER/ConrollerEndereco.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/MODEL/Produto.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmPrincipal.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/MODEL/Endereco.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/MODEL/Contato.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/MODEL/Usuario.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmCadastroDeDados.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/CONEXAO/Conexao.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/VIEW/FrmTelaCompra.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/MODEL/Cliente.java</file>
-            <file>file:/C:/Users/wesle/OneDrive/Área%20de%20Trabalho/DeliveryFajuto-Painel_de_compra/DeliveryFajuto-main/Delivery001/src/DAO/Daocontato.java</file>
+            <file>file:/C:/Users/mathe/Desktop/Trabalho/DeliveryFajuto-CadastroDeUsuario/Delivery001/src/VIEW/FrmPrincipal.java</file>
+            <file>file:/C:/Users/mathe/Desktop/Trabalho/DeliveryFajuto-CadastroDeUsuario/Delivery001/src/VIEW/Finalização_de_compra.java</file>
         </group>
     </open-files>
 </project-private>

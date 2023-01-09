@@ -36,6 +36,8 @@ public class Tela_Final extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
+        setTitle("Delivery-Fajuto");
+
         jPanel1.setBackground(new java.awt.Color(4, 41, 64));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
