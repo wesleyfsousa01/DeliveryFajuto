@@ -39,7 +39,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         painelDesktop = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
+        menuCardapio = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         menuCadastrar = new javax.swing.JMenu();
         menuCadastrarUsuario = new javax.swing.JMenuItem();
@@ -71,12 +71,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(254, 75));
 
-        jMenu4.setBackground(new java.awt.Color(48, 167, 86));
-        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
-        jMenu4.setText("Cardápio");
-        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        menuCardapio.setBackground(new java.awt.Color(48, 167, 86));
+        menuCardapio.setForeground(new java.awt.Color(0, 0, 0));
+        menuCardapio.setText("Cardápio");
+        menuCardapio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuCardapio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuCardapio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCardapioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menuCardapio);
 
         jMenu1.setText("Vendas");
         jMenuBar1.add(jMenu1);
@@ -154,6 +159,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
        cadProd.setVisible(true);
     }//GEN-LAST:event_menuCadastrarProdutosActionPerformed
 
+    private void menuCardapioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCardapioMouseClicked
+        TelaCardapio cardapio = new TelaCardapio();
+        painelDesktop.add(cardapio);
+        cardapio.setVisible(true);
+    }//GEN-LAST:event_menuCardapioMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -192,7 +203,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
@@ -202,6 +212,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCadastrarProdutos;
     private javax.swing.JMenuItem menuCadastrarUsuario;
     private javax.swing.JMenuItem menuCadastroCliente;
+    private javax.swing.JMenu menuCardapio;
     public static javax.swing.JDesktopPane painelDesktop;
     // End of variables declaration//GEN-END:variables
 }

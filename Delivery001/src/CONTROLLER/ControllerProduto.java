@@ -6,7 +6,9 @@ package CONTROLLER;
 
 import DAO.DaoProduto;
 import MODEL.Produto;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.List;
 
 /**
  *
@@ -14,6 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class ControllerProduto {
     DAO.DaoProduto daoproduto = new DaoProduto();
+    
+    List<Produto> lista = new ArrayList<>();
     
     public void inserirProduto(Produto p){
         if (!p.urlFoto.isBlank() && !p.nome.isBlank() && !p.categoria.isBlank() && p.preco != 0 && !p.descricao.isBlank()) {
@@ -23,4 +27,10 @@ public class ControllerProduto {
             JOptionPane.showMessageDialog(null, "Campos Obrigatórios em branco");
         }
 }
+    
+    public List<Produto> recarregarListaProdutos(){
+        lista.clear();
+        lista = daoproduto.buscarProdutos();
+        return lista;
+    }
 }
